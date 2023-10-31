@@ -6,7 +6,7 @@ pipeline {
         stage('Git Pull') {
             steps {
                 git url: 'https://github.com/Siddharth-Yedlapati/Calculator.git', branch: 'master',
-                credentialsId: 'github-cred'
+                credentialsId: 'github_cred'
             }
         }
         stage('Build') {
