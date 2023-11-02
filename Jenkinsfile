@@ -53,14 +53,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                ansiblePlaybook becomeUser: null,
-                colorized: true,
-                credentialsId: 'localhost',
-                disableHostKeyChecking: true,
-                installation: 'Ansible',
-                inventory: 'Deployment/inventory',
-                playbook: 'Deployment/deploy.yml',
-                sudoUser: null
+                sh 'export PATH="/usr/bin/python3.8"'
+                sh '/usr/bin/ansible-playbook ./Deployment/deploy.yml -i ./Deployment/inventory -e image_name=siddharth322/calculator'
+                sh 'chmod 777 ./scripts/kill.sh'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                sh './scripts/kill.sh'
             }
         }
     }
