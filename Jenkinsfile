@@ -51,5 +51,17 @@ pipeline {
                 sh '/usr/bin/docker rmi $registry:latest'
             }
         }
+        stage('Deploy') {
+            steps {
+                ansiblePlaybook becomeUser: null,
+                colorized: true,
+                credentialsId: 'localhost',
+                disableHostKeyChecking: true,
+                installation: 'Ansible',
+                inventory: 'Deployment/inventory',
+                playbook: 'Deployment/deploy.yml',
+                sudoUser: null
+            }
+        }
     }
 }
