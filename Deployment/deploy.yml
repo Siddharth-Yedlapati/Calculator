@@ -13,4 +13,4 @@
         name: docker
         state: started
     - name: Running container
-      shell: /usr/bin/docker run -it -p 3000:3000 -d siddharth322/calculator:latest >> ~/container_id.txt
+      shell: /usr/bin/docker run -it -p 3000:3000 -d siddharth322/calculator:latest
