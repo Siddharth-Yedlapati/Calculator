@@ -45,7 +45,7 @@ function App() {
         <>
             <div className="App">
                 <div className="calculator-body">
-                    <h1>Scientific Calculator</h1>
+                    <h1>Calculator</h1>
                     <div className="input-body">
                         <input
                             className="screen"
@@ -60,7 +60,7 @@ function App() {
                     <div className="button-pad">
                         <div className="symbol-body">
                             {["0", "1", "2", "3", "4", "5",
-                                "6", "7", "8", "9", "."].map(
+                                "6", "7", "8", "9", ".", "(", ")", "+", "-", "*", "/", "^", "sqrt(",].map(
                                     (input) => (
                                         <button key={input}
                                             onClick={() =>
@@ -70,16 +70,9 @@ function App() {
                                     )
                                 )}
                         </div>
-                        <div className="arithmetic">
+                        {/* <div className="arithmetic">
                             {[
-                                "(", 
-                                ")", 
-                                "+",
-                                "-",
-                                "*",
-                                "/",
-                                "^",
-                                "sqrt(",
+
 
                             ].map((input) => (
                                 <button key={input}
@@ -89,8 +82,8 @@ function App() {
                                 </button>
                             ))}
  
-                        </div>
-                        <div className="controls-body">
+                        </div> */}
+                        <div className="arithmetic">
                             <button className="clearscreen"
                                 onClick={clearScreen}>
                                 C
