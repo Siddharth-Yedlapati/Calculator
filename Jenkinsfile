@@ -21,14 +21,14 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm install --force' //Installing dependencies
-                sh 'tar czf Calculator.tar.gz node_modules public scripts src Jenkinsfile package.json' //Creating a compressed archive of the required files and directories
+                sh 'npm install --force' 
+                sh 'tar czf Calculator.tar.gz node_modules public scripts src Jenkinsfile package.json' 
             }
         }
         stage('Test') {
             steps {
-                sh 'chmod 777 ./scripts/test.sh' //Ensuring that test.sh is executable
-                sh './scripts/test.sh' //Executing test.sh
+                sh 'chmod 777 ./scripts/test.sh' 
+                sh './scripts/test.sh' 
             }
         }
         stage('Build docker image') {
