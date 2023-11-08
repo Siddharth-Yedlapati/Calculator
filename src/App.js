@@ -44,19 +44,21 @@ function App() {
     return (
         <>
             <div className="App">
-                <div className="calc-body">
+                <div className="calculator-body">
                     <h1>Scientific Calculator</h1>
-                    <div className="input-section">
+                    <div className="input-body">
                         <input
                             className="screen"
                             type="text"
                             value={displayval}
                             onChange={outputHandler}
                         />
-                        <div className="output">Output: {outputval}</div>
+                        <div
+                         className="output">Result: {outputval}
+                         </div>
                     </div>
-                    <div className="button-section">
-                        <div className="numeric-pad">
+                    <div className="button-pad">
+                        <div className="symbol-body">
                             {["0", "1", "2", "3", "4", "5",
                                 "6", "7", "8", "9", "."].map(
                                     (input) => (
@@ -68,18 +70,17 @@ function App() {
                                     )
                                 )}
                         </div>
-                        <div className="operators">
+                        <div className="arithmetic">
                             {[
+                                "(", 
+                                ")", 
                                 "+",
                                 "-",
                                 "*",
                                 "/",
                                 "^",
                                 "sqrt(",
-                                // Add open parenthesis
-                                "(", 
-                                // Add close parenthesis
-                                ")", 
+
                             ].map((input) => (
                                 <button key={input}
                                     onClick={() =>
@@ -89,16 +90,16 @@ function App() {
                             ))}
  
                         </div>
-                        <div className="control-buttons">
-                            <button className="clear-button"
+                        <div className="controls-body">
+                            <button className="clearscreen"
                                 onClick={clearScreen}>
                                 C
                             </button>
-                            <button className="backspace-button"
+                            <button className="delete-value"
                                 onClick={backspace}>
                                 CE
                             </button>
-                            <button className="equals-button"
+                            <button className="equals-value"
                                 onClick={compute}>
                                 =
                             </button>
@@ -106,7 +107,7 @@ function App() {
                         </div>
                     </div>
                 </div>
-                <div className="variables"></div>
+
             </div>
         </>
     );
