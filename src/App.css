@@ -57,13 +57,15 @@ h1 {
 
 .symbol-body {
   display: grid;
+  margin-left: 20%;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
 .arithmetic {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(4, 1fr); */
+  margin-right: 20%;
   gap: 10px;
 }
 
