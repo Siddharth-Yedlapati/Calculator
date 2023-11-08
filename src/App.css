@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+ .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-top: 100px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #b3621f;
+  margin-bottom: 50px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.calculator-body {
+  background-color: rgba(245, 236, 183, 0.911);
+  border: 2px solid #141414;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 40vw;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  padding: 2vw;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.input-body {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.screen {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  border: 1px solid #cccccc;
+  margin-bottom: 5px;
+}
+
+.output {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: rgb(0, 128, 122);
+  font-weight: 900;
+  font-size: 2vw;
+}
+
+.button-pad {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.symbol-body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.arithmetic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.controls-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #b8bcb8;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1fb39a;
+}
+
+.equals-value {
+  background-color: #74ff33;
+  margin: 5px;
+}
+
+.clearscreen {
+  background-color: #ff5833de;
+  margin: 5px;
+}
+
+.delete-value {
+  background-color: #1fb3a7;
+  margin: 5px;
+}
+
+.fields input {
+  background-color: #e8eef5;
+  border: 1px solid rgb(231, 228, 228);
+  width: 5vw;
 }
