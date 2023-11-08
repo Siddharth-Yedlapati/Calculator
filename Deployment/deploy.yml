@@ -5,12 +5,6 @@
     ansible_python_interpreter: /usr/bin/python3.8
   tasks:
     - name: Pull image
-      docker_image:
-        name: siddharth322/calculator:latest
-        source: pull
-    - name: Start docker service
-      service:
-        name: docker
-        state: started
+      shell: docker pull siddharth322/calculator:latest
     - name: Running container
-      shell: /usr/bin/docker run -it -p 3000:3000 -d siddharth322/calculator:latest
+      shell: docker run -it -d siddharth322/calculator:latest
